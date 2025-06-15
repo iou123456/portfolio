@@ -1,198 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-    <script defer src="main.js"></script>
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Sheldon - Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <main>
-        <aside>
-            <ul class="Links">
-                <li onclick="Navigate(0)" class="activeLink"><i class="fa-solid fa-house"></i>
-                    <p>Home</p>
-                </li>
-                <li onclick="Navigate(1)"><i class="fa-solid fa-user" ></i>
-                    <p>About Me</p>
-                </li>
-                <li onclick="Navigate(2)"><i class="fa-solid fa-list"></i>
-                    <p>Services</p>
-                </li>
-                <li onclick="Navigate(3)"><i class="fa-solid fa-images"></i>
-                    <p>My Projects</p>
-                </li>
-                <li onclick="Navigate(4)"><i class="fa-solid fa-comments"></i>
-                    <p>Contact Me</p>
-                </li>
-            </ul>
-        </aside>
-        <div class="swiper mySwiper">
-            <div class="SlideContainer swiper-wrapper">
-                <div class="swiper-slide home-slide">
-                    <div class="HomeContent">
-                        <h1>Hi! I'm <span class="stylized-name">Timsheldon</span>,</h1>
-                        <h2>A <span class="proffesions">Web Developer</span></h2>
-                        <p class="heroline">A skilled web developer with experience in front-end and back-end technologies, including HTML/CSS, Angular, React.js, and Node.js. </p>
-                        <div class="buttonGroup"><button>Hire Me</button><button>Contact Me</button></div>
-                    </div>
-                    <div class="SideImg">
-                        <div class="top-right-corner">
-                            <hr class="hr1">
-                            <hr class="hr2">
-                        </div>
-                        <img src="Tim photo.jpg" alt="My Image">
-                        <div class="bottom-left-corner">
-                            <hr class="hr1">
-                            <hr class="hr2">
-                        </div>
-                    </div>
-                    <p class="slide-help">Scroll for next slide <i class="fa-solid fa-chevron-right fa-shake"></i>
-                    </p>
-                </div>
-                <div class="swiper-slide">
-                    <div class="about-us">
-                    <h1 class="heading">About Me</h1>
-                    <h3 class="sub-heading">I'm Timsheldon, <span class="proffesions">A Web Developer</span></h3>
-                    <p class="aboutme-deatils">
-                        I am a skilled web developer with experience in both front-end and back-end technologies, including HTML/CSS, Angular, React.js, and Node.js. 
-                        With a background in Information Technology and hands-on experience as a Full Stack Engineer Intern at Plus W (Japan), I have developed secure and efficient web applications, implemented data management solutions, and collaborated with diverse teams to solve technical challenges. 
-                        My expertise extends to database management, knowledge management tools, and cybersecurity. Passionate about building innovative digital solutions, I am committed to enhancing web experiences and optimizing system efficiency.
-                    </p>
-                    <div class="about-me-divison">
-                        <div class="about-me-table">
-                            <li><span>Experience:</span> 2+ years</li>
-                            <li><span>Country:</span> Kenya</li>
-                            <li><span>Avability:</span> 24/7 </li>
-                            <li><span>Satisfied Clients:</span>10+</li>
-                            <li><span>Age</span>:23</li>
-                            <li><span>Phone</span>: +254791058879</li>
-                            <li><span>Language Used:</span>HTML</li>
-                            <li><span>Degree</span>:Information Technology</li>
-                            <div class="buttonGroup"><button>Hire Me</button><button>Contact Me</button></div>
-                        </div>
+  <main>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+      <ul class="Links">
+        <li data-slide="0" class="activeLink">
+          <a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li data-slide="1">
+          <a>
+            <i class="fa-solid fa-user"></i>
+            <span>About Me</span>
+          </a>
+        </li>
+        <li data-slide="2">
+          <a>
+            <i class="fa-solid fa-list"></i>
+            <span>Services</span>
+          </a>
+        </li>
+        <li data-slide="3">
+          <a>
+            <i class="fa-solid fa-images"></i>
+            <span>My Projects</span>
+          </a>
+        </li>
+        <li data-slide="4">
+          <a>
+            <i class="fa-solid fa-comments"></i>
+            <span>Contact Me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-                        <div class="skill-bar">
-                            <li>
-                                <p>HTML</p>
-                                <div class="bar">
-                                    <div class="active-bar" style="width:99%"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>CSS</p>
-                                <div class="bar">
-                                    <div class="active-bar" style="width:80%"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>JavaScript</p>
-                                <div class="bar">
-                                    <div class="active-bar" style="width:85%"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Python</p>
-                                <div class="bar">
-                                    <div class="active-bar" style="width:50%"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Django</p>
-                                <div class="bar">
-                                    <div class="active-bar" style="width:60%"></div>
-                                </div>
-                            </li>
-                        </div>
-                    </div>
-                </div></div>
-                <div class="swiper-slide services">
+    <div class="swiper mySwiper">
+      <div class="SlideContainer swiper-wrapper">
+        <!-- Home Slide -->
+<div class="swiper-slide home-slide">
+    <div class="HomeContent">
+      <h1>Hi! I'm <span class="stylized-name">Timsheldon</span>,</h1>
+      <h2>A <span class="proffesions">Web Developer</span></h2>
+      <p class="heroline">
+        A skilled web developer with experience in front-end and back-end technologies,
+        including HTML/CSS, Angular, React.js, and Node.js.
+      </p>
+      <div class="buttonGroup">
+        <a href="assets/Timsheldon Ayiecho Oure-.pdf" download="Timsheldon-Ayiecho-Oure-CV.pdf" class="cv-button">
+            <button></button>
+        </a>
+        <button id="goToContact">Contact Me</button>
+    </div>
+    </div>
+  
+    <div class="SideImg">
+      <div class="top-right-corner">
+        <hr class="hr1" />
+        <hr class="hr2" />
+      </div>
+  
+      <img src="Tim photo.jpg" alt="Timsheldon's Photo" />
+  
+      <div class="bottom-left-corner">
+        <hr class="hr1" />
+        <hr class="hr2" />
+      </div>
+    </div>
+  </div>
 
-                    <h1 class="heading">Services</h1>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                        <h2>Web Design</h2>
-                        <p>Create visually appealing, user-friendly, and responsive website designs.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
-                        <h2>Web Development</h2>
-                        <p>Build responsive and user-friendly websites.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <h2>Database Management</h2>
-                        <p>Design and manage structured databases.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-image"></i></div>
-                        <h2>Landing Page </h2>
-                        <p>Develop professional and high-converting landing pages.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                        <h2>Website Optimization</h2>
-                        <p> Improve website speed, security, and performance.</p>
-                    </div>
-                    <div class="service">
-                        <div class="service-icon"><i class="fa-solid fa-database"></i></div>
-                        <h2>Full-Stack Development</h2>
-                            <p>Develop end-to-end web applications.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide gallery">
-                    <h1 class="heading">Gallery</h1>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=1" alt=""></div>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=2" alt=""></div>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=3" alt=""></div>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=4" alt=""></div>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=5" alt=""></div>
-                    <div class="project"><img src="https://picsum.photos/200/300?random=6" alt=""></div>
-                </div>
-                <div class="swiper-slide contactMe">
-                    <h1 class="heading">Contact Me</h1>
-                    <div class="contactinfo"><i class="fa-solid fa-phone"></i>
-                        <h3>Mobile No</h3>
-                        <p>+254791058879</p>
-                    </div>
-                    <div class="contactinfo"><i class="fa-solid fa-location-dot"></i>
-                        <h3>Location</h3>
-                        <p>Kenya</p>
-                    </div>
-                    <div class="contactinfo"><i class="fa-regular fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>timsheldonoure1@gmail.com</p>
-                    </div>
-                    <div class="contactinfo"><i class="fa-solid fa-globe"></i>
-                        <h3>Website</h3>
-                        <p>www.abc123.com</p>
-                    </div>
-                    <form>
-                        <h2>Send Me A Message <div class="SocialLinks">
-                            <a href="https://www.linkedin.com/in/timsheldon-oure/" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-facebook"></i>
-                            </div>
-                        </h2>
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="email">
-                        <textarea rows="10" placeholder="Type your Message Here..."></textarea>
-                        <button class="primary">Send</button>
+        <!-- About Me Slide -->
+<div class="swiper-slide">
+    <div class="about-us">
+      <h1 class="heading">About Me</h1>
+      <h3 class="sub-heading">I'm Timsheldon, <span class="proffesions">A Web Developer</span></h3>
+      <p class="aboutme-deatils">
+        I am a skilled web developer with experience in both front-end and back-end technologies, including HTML/CSS, Angular, React.js, and Node.js. 
+        With a background in Information Technology and hands-on experience as a Full Stack Engineer Intern at Plus W (Japan), I have developed secure and efficient web applications, implemented data management solutions, and collaborated with diverse teams to solve technical challenges. 
+        My expertise extends to database management, knowledge management tools, and cybersecurity. Passionate about building innovative digital solutions, I am committed to enhancing web experiences and optimizing system efficiency.
+      </p>
+  
+      <div class="about-me-divison">
+        <div class="about-me-table">
+          <ul>
+            <li><span>Experience:</span> 2+ years</li>
+            <li><span>Country:</span> Kenya</li>
+            <li><span>Availability:</span> 24/7</li>
+            <li><span>Satisfied Clients:</span> 10+</li>
+            <li><span>Age:</span> 23</li>
+            <li><span>Phone:</span> +254791058879</li>
+            <li><span>Language Used:</span> HTML</li>
+            <li><span>Degree:</span> Information Technology</li>
+          </ul>
+  
 
-                    </form>
-                    <footer>
-                        <li>Copyright © 2025 Timsheldon.</li>
-                    </footer>
+        </div>
+  
+        <div class="skill-bar">
+          <ul>
+            <li>
+              <p>HTML</p>
+              <div class="bar"><div class="active-bar" style="width:99%"></div></div>
+            </li>
+            <li>
+              <p>CSS</p>
+              <div class="bar"><div class="active-bar" style="width:80%"></div></div>
+            </li>
+            <li>
+              <p>JavaScript</p>
+              <div class="bar"><div class="active-bar" style="width:85%"></div></div>
+            </li>
+            <li>
+              <p>Python</p>
+              <div class="bar"><div class="active-bar" style="width:50%"></div></div>
+            </li>
+            <li>
+              <p>Django</p>
+              <div class="bar"><div class="active-bar" style="width:60%"></div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+        <!-- Services Slide -->
+        <div class="swiper-slide services">
+          <h1 class="heading">Services</h1>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h2>Web Design</h2>
+            <p>Create visually appealing, user-friendly, and responsive website designs.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+            <h2>Web Development</h2>
+            <p>Build responsive and user-friendly websites.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h2>Database Management</h2>
+            <p>Design and manage structured databases.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-image"></i></div>
+            <h2>Landing Page </h2>
+            <p>Develop professional and high-converting landing pages.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h2>Website Optimization</h2>
+            <p>Improve website speed, security, and performance.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+            <h2>Full-Stack Development</h2>
+            <p>Develop end-to-end web applications.</p>
+          </div>
+        </div>
+
+        <!-- Gallery Slide -->
+        <div class="swiper-slide gallery">
+          <h1 class="heading">Gallery</h1>
+          <div class="project"><img src="https://picsum.photos/200/300?random=1" alt=""></div>
+          <div class="project"><img src="https://picsum.photos/200/300?random=2" alt=""></div>
+          <div class="project"><img src="https://picsum.photos/200/300?random=3" alt=""></div>
+          <div class="project"><img src="https://picsum.photos/200/300?random=4" alt=""></div>
+          
+        </div>
+
+        <!-- Contact Slide -->
+        <div class="swiper-slide contactMe">
+            <h1 class="heading">Contact Me</h1>
+          
+            <!-- NEW WRAPPER -->
+            <div class="contact-wrapper">
+              <div class="contact-details">
+                <div class="contactinfo">
+                  <i class="fa-solid fa-phone"></i>
+                  <h3>Mobile No</h3>
+                  <p>+254791058879</p>
                 </div>
+                <div class="contactinfo">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <h3>Location</h3>
+                  <p>Kenya</p>
+                </div>
+                <div class="contactinfo">
+                  <i class="fa-regular fa-envelope"></i>
+                  <h3>Email</h3>
+                  <p>timsheldonoure1@gmail.com</p>
+                </div>
+                <div class="contactinfo">
+                  <i class="fa-solid fa-globe"></i>
+                  <h3>Website</h3>
+                  <p>https://mytimsheldonportfolio.netlify.app/</p>
+                </div>
+              </div>
+          
+              <form action="https://formspree.io/f/mqabbbpq" method="POST" id="contactForm">
+                <h2>Send Me A Message</h2>
+                <div class="SocialLinks">
+                  <a href="https://www.linkedin.com/in/timsheldon-oure/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-facebook"></i>
+                </div>
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <textarea name="message" rows="10" placeholder="Type your Message Here..." required></textarea>
+                <button type="submit" class="primary">Send</button>
+                <div id="form-message" style="display:none;"></div>
+              </form>
             </div>
-    </main>
+          
+            <footer>
+              <li>&copy; 2025 Timsheldon.</li>
+            </footer>
+          </div>
+          
+  
+      </div>
+    </div>
+  </main>
+
+  <!-- Swiper JS and Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.mySwiper', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 0,
+      mousewheel: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+
+    const navItems = document.querySelectorAll('.Links li');
+    navItems.forEach(item => {
+      item.addEventListener('click', function () {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        swiper.slideTo(slideIndex);
+        navItems.forEach(nav => nav.classList.remove('activeLink'));
+        this.classList.add('activeLink');
+      });
+    });
+
+    swiper.on('slideChange', function () {
+      const activeIndex = swiper.activeIndex;
+      navItems.forEach((item, index) => {
+        item.classList.toggle('activeLink', index === activeIndex);
+      });
+    });
+
+    // Contact Me Button Scrolls to .contactMe Slide
+    const contactButton = document.getElementById('goToContact');
+    if (contactButton) {
+      contactButton.addEventListener('click', () => {
+        const contactSlideIndex = Array.from(document.querySelectorAll('.swiper-slide'))
+          .findIndex(slide => slide.classList.contains('contactMe'));
+
+        if (contactSlideIndex !== -1) {
+          swiper.slideTo(contactSlideIndex);
+        }
+      });
+    }
+
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const messageDiv = document.getElementById('form-message');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          messageDiv.style.display = 'block';
+          messageDiv.style.backgroundColor = '#80ed99';
+          messageDiv.style.color = '#176d2d';
+          messageDiv.textContent = 'Message sent successfully! Redirecting...';
+          form.reset();
+          setTimeout(() => swiper.slideTo(0), 2000);
+        } else {
+          const error = await response.json();
+          throw new Error(error.error || 'Form submission failed');
+        }
+      } catch (error) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.backgroundColor = '#ff6b6b';
+        messageDiv.style.color = '#fff';
+        messageDiv.textContent = 'Error sending message. Please try again.';
+        console.error('Error:', error);
+      }
+    });
+
+    // Scroll Shadow + Hide/Show Nav
+    const nav = document.querySelector('.top-nav');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', function () {
+      const currentScrollY = window.scrollY;
+
+      // Shadow effect
+      if (currentScrollY > 20) {
+        nav.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.15)';
+      } else {
+        nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      }
+
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        nav.style.transform = 'translateY(-120%)';
+      } else {
+        nav.style.transform = 'translateY(0)';
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
