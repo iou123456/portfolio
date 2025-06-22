@@ -1,16 +1,17 @@
-Timsheldon's Portfolio
-
-Overview
-
+**Timsheldon's Portfolio
+**
+**Overview
+**
 This repository contains the source code for Timsheldon's personal portfolio website. The portfolio showcases Timsheldon's skills, projects, and contact information, providing a professional online presence.
 
-Features
+**Features**
+
 Responsive Design: The website is fully responsive and works on all device sizes.
 
 Modern UI: Clean and professional user interface with smooth animations.
 
-Sections:
-
+**Sections:
+**
 Home: Introduction and quick links to social profiles.
 
 About Me: Brief bio and professional background.
@@ -23,7 +24,8 @@ Contact Me: Contact form and details.
 
 Interactive Elements: Smooth scrolling, form validation, and dynamic navigation.
 
-Technologies Used
+**Technologies Used
+**
 Frontend:
 
 HTML5
@@ -32,8 +34,8 @@ CSS3 (with Flexbox and Grid)
 
 JavaScript (for interactivity)
 
-Libraries:
-
+**Libraries:
+**
 Boxicons for icons.
 
 ScrollReveal for scroll animations.
@@ -42,7 +44,8 @@ Form Handling:
 
 Formspree for form submissions.
 
-Setup Instructions
+**Setup Instructions
+**
 Clone the Repository:
 
 bash
@@ -52,22 +55,25 @@ Open the Project:
 
 Open the index.html file in your preferred browser.
 
-Deployment:
-
+**Deployment:
+**
 The project can be deployed on platforms like Netlify, Vercel, or GitHub Pages.
 
-Customization
+**Customization
+**
 Replace assets/Tim photo.jpg and assets/Tim logo.png with your own images.
 
 Update the content in index.html to reflect your personal information.
 
 Modify the color scheme in style.css by changing the --hue-color variable.
 
-Live Demo
-Check out the live version of the portfolio: mytimsheldonportfolio.netlify.app
+**Live Demo
+**Check out the live version of the portfolio: mytimsheldonportfolio.netlify.app
 
-License
+**License
+**
 This project is open-source and available under the MIT License. Feel free to use and modify it for your own portfolio.
 
-Contact
+**Contact
+**
 For any questions or feedback, reach out to Timsheldon at timsheldonoure1@gmail.com.
