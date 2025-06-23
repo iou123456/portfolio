@@ -209,18 +209,19 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 100px; 
+  width: 100%;  
+  max-width: 300px; 
+  height: auto;  
 }
 
 .home__blob-img {
-  width: 250%;  
+  width: 100%;  
+  max-width: 500px;  
   height: auto;  
   border-radius: 20px;  
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-
-/*BUTTONS*/
 /* Button Styles */
 .button-container {
     display: flex;
