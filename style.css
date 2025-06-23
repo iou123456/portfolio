@@ -209,20 +209,20 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 15vw;  
-  min-width: 100px;  
+  width: 50%;  
+  max-width: 400px; 
+  min-width: 150px;  
   height: auto;  
 }
 
 .home__blob-img {
-  width: 40vw;  
-  max-width: 800px;  
+  width: 80%;  
+  max-width: 600px;  
   height: auto;  
-  border-radius: 20px;  
+  border-radius: 20px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  min-width: 200px;  
+  min-width: 200px;  /* Ensure it doesn't shrink too small */
 }
-
 /* Button Styles */
 .button-container {
     display: flex;
