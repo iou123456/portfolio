@@ -1,8 +1,8 @@
-Timsheldon's Portfolio
+My Portfolio
 
 Overview
 
-This repository contains the source code for Timsheldon's personal portfolio website. The portfolio showcases Timsheldon's skills, projects, and contact information, providing a professional online presence.
+This repository contains the source code for my personal portfolio website. The portfolio showcases Timsheldon's skills, projects, and contact information, providing a professional online presence.
 
 Features
 
