@@ -1,103 +1,135 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links li');
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
-}
-showMenu('nav-toggle','nav-menu')
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+    // Sticky Header
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-const scrollActive = () =>{
-    const scrollDown = window.scrollY
+    // Form Submission
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
 
-  sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-            sectionsClass.classList.add('active-link')
-        }else{
-            sectionsClass.classList.remove('active-link')
-        }                                                    
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-//     reset: true
-});
-
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
-
-/*===== FORM SUBMISSION WITH AJAX =====*/
-document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.getElementById('contactForm');
-    const messageDiv = document.getElementById('form-message');
-
-    contactForm.addEventListener('submit', async function (e) {
-        e.preventDefault(); // Prevent default form submission
-
-        const form = e.target;
-        const formData = new FormData(form);
-
+        // Disable submit button to prevent multiple submissions
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        
+        // Clear previous status messages
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+        
         try {
-            // Make the AJAX request to Formspree
-            const response = await fetch(form.action, {
+            const response = await fetch(this.action, {
                 method: 'POST',
-                body: formData,
+                body: new FormData(this),
                 headers: {
-                    'Accept': 'application/json',
-                },
+                    'Accept': 'application/json'
+                }
             });
-
+            
             if (response.ok) {
-                // Show success message
-                messageDiv.style.display = 'block';
-                messageDiv.style.backgroundColor = '#80ed99';
-                messageDiv.style.color = '#176d2d';
-                messageDiv.textContent = 'Message sent successfully!';
-                form.reset(); // Reset the form
-
-                // Optional: Hide the message after 2 seconds
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 2000);
+                // Success message
+                formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
+                formStatus.classList.add('success');
+                contactForm.reset();
             } else {
-                throw new Error('Form submission failed');
+                // Error message
+                const errorData = await response.json();
+                if (errorData.errors) {
+                    formStatus.textContent = errorData.errors.map(error => error.message).join(', ');
+                } else {
+                    formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+                }
+                formStatus.classList.add('error');
             }
         } catch (error) {
-            // Show error message
-            messageDiv.style.display = 'block';
-            messageDiv.style.backgroundColor = '#ff6b6b';
-            messageDiv.style.color = '#fff';
-            messageDiv.textContent = 'Error sending message. Please try again.';
+            // Network error
+            formStatus.textContent = 'Oops! There was a problem submitting your form. Please check your connection and try again.';
+            formStatus.classList.add('error');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
         }
+    });
+}
+
+    // Update Copyright Year
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // Animate Skills on Scroll
+    const skillItems = document.querySelectorAll('.skill-item');
+    const animateSkills = () => {
+        skillItems.forEach(item => {
+            const progress = item.querySelector('.progress');
+            const percent = progress.parentElement.querySelector('span:last-child').textContent;
+            progress.style.width = percent;
+        });
+    };
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.id === 'skills') {
+                    animateSkills();
+                }
+                entry.target.classList.add('animated');
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
     });
 });
